@@ -6,9 +6,9 @@
     "start": "ng serve",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build": "ng build  --configuration production --base-href 'https://githubjn.github.io/angapp/'",
+    "build": "ng build  --configuration production --base-href 'https://githubjn.github.io/'",
     "deploy": "ngh --dir=dist",
-    "deploy:gh": "ng build  --configuration production --base-href 'https://githubjn.github.io/angapp/' && ngh --dir=dist",
+    "deploy:gh": "ng build  --configuration production --base-href 'https://githubjn.github.io/' && ngh --dir=dist",
     "deploy:ghp": "ngh --dir=dist"
   },
   "private": true,
