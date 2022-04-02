@@ -1,0 +1,25 @@
+<h2>{{ 'countries_page' | translate }}</h2>
+<div class="container">
+  <div class="row mb4" *ngFor="let c of countries | async">
+      <div class="col-4">
+              <img [src]="'assets/images/' + c.imageUrl + '.jpg'" style="width: 100%" alt="">
+      </div>
+      <div class="col-8">
+          <h2>{{ c.name }}</h2>
+          <p>{{ c.desc }}</p>
+
+          <div class="row">
+            <div class="col-8">
+              <div class="input-group col-4">
+                <input type="text" class="form-control blog-input" placeholder="3 rooms left"/>
+
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" type="button">{{ 'buy' | translate }}</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+

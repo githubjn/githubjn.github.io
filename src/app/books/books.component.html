@@ -1,0 +1,57 @@
+<h1>books works!</h1>
+<!-- <div class="card card-block"> -->
+
+<div class="card card-block">
+    <h5>Book Summary</h5>
+    <div *ngIf="(bbook | async) as bbook; else loading">
+        <p>{{ bbook.id + ' - ' + bbook.title + ' - ' + bbook.userId }}</p>
+        <p>{{ bbook.body }}</p>
+    </div>
+    <ng-template #loading>
+        <p>Loading...</p>
+    </ng-template>
+</div>
+
+<hr>
+
+<div class="card card-block">
+    <div *ngIf="!!book; else loading2">
+        <p>{{ book.id + ' - ' + book.title + ' - ' + book.userId }}</p>
+        <p>{{ book.body }}</p>
+    </div>
+    <ng-template #loading2>
+        <p>Loading...</p>
+    </ng-template>
+</div>
+
+<!-- <p>{{ book | async }}</p> -->
+
+<div class="card card-block">
+    <h4 class="card-title">AsyncPipe</h4>
+    <p class="card-text" ngNonBindable>{{ promise }}</p>
+    <p class="card-text">{{ promise | async }}</p>
+</div>
+
+<hr>
+
+<div class="table-responsive cnstr-record product-tbl">
+    <table class="table table-bordered heading-hvr">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Title</th>
+                <th>User id</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let b of books | async ">
+            <tr>
+                <td>{{ b.id }}</td>
+                <td>{{ b.title }}</td>
+                <td>{{ b.userId }}</td>
+            </tr>
+        </tbody>    
+    </table>    
+</div>
+
+
+
