@@ -15,4 +15,5 @@ services:
       - ./tsconfig.json:/angapp/tsconfig.json
       - ./tslint.json:/angapp/tslint.json
       - ./package.json:/angapp/package.json
+      - ./angular.json:/angapp/angular.json
     entrypoint: ng serve --host 0.0.0.0
