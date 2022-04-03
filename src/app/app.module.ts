@@ -19,7 +19,13 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { CountriesComponent } from './countries/countries.component';
-import { FooterComponent } from './footer/footer.component'; 
+import { FooterComponent } from './footer/footer.component';
+import { ServicesComponent } from './services/services.component';
+import { PdpComponent } from './pdp/pdp.component';
+import { PlpComponent } from './plp/plp.component';
+import { PricingComponent } from './pricing/pricing.component';
+import { FaqComponent } from './faq/faq.component';
+import { ContactComponent } from './contact/contact.component'; 
 
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http);
@@ -36,7 +42,13 @@ export function HttpLoaderFactory(http: HttpClient){
     NavbarComponent,
     CountryComponent,
     CountriesComponent,
-    FooterComponent
+    FooterComponent,
+    ServicesComponent,
+    PdpComponent,
+    PlpComponent,
+    PricingComponent,
+    FaqComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
