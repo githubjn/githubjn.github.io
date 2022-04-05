@@ -1,6 +1,5 @@
-import { NotFoundComponent } from './not-found/not-found.component';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -70,7 +69,8 @@ export function HttpLoaderFactory(http: HttpClient){
       useClass: LanguageInterceptor, 
       multi: true 
     },
-    HttpClient
+    HttpClient,
+    Title
   ],
   bootstrap: [AppComponent]
 })

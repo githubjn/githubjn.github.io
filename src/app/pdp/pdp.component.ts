@@ -1,3 +1,4 @@
+import { Title } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PdpComponent implements OnInit {
 
-  constructor() { }
+  title = "Product Page";
+
+  constructor(
+    private titleService:Title
+  
+  ) { }
 
   ngOnInit(): void {
-  }
+    this.titleService.setTitle(this.title);
+    }
 
 }

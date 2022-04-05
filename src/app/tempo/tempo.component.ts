@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Observable, Observer } from 'rxjs';
 
 @Component({
@@ -8,16 +9,21 @@ import { Observable, Observer } from 'rxjs';
 })
 export class TempoComponent implements OnInit {
 
+  title = 'Home page';
   greeting: Promise<string>|null = null;
   arrived: boolean = false;
 
   private resolve: Function|null = null;
 
-  constructor() {
+  constructor(
+    private titleService:Title
+  ) {
     this.reset();
    }
 
-  ngOnInit(): void {  }
+  ngOnInit(): void { 
+    this.titleService.setTitle(this.title)
+  }
 
   reset() {
     this.arrived = false;

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Title } from '@angular/platform-browser';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
-import { filter } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 
 declare const gtag: Function;
 
@@ -12,32 +13,37 @@ declare const gtag: Function;
 })
 
 export class AppComponent {
-  title = 'angapp-to test deploy-JMC.';
 
+  title = 'angapp-JMC';
 
   constructor(
-              private router: Router
-             ,private translateService: TranslateService
-              ) {
+    private router: Router
+    , private translateService: TranslateService
+    // , private activatedRoute: ActivatedRoute
+    , private titleService: Title){
 
     this.router.events.pipe(
       filter((event: any) => event instanceof NavigationEnd)
-    ).subscribe((event: NavigationEnd) => {
-      
+      ).subscribe((event: NavigationEnd) => {
+
       /** START : Code to Track Page View  */
-       gtag('event', 'page_view', {
-          page_path: event.urlAfterRedirects
-       })
+      gtag('event', 'page_view', {
+        page_path: event.urlAfterRedirects
+      })
       /** END */
     });
 
     this.translateService.setDefaultLang('en');
-    this.translateService.use( localStorage.getItem('lang') || 'en' );
+    this.translateService.use(localStorage.getItem('lang') || 'en');
 
     const lang = localStorage.getItem('lang') || 'en';
     document.documentElement.lang = lang;
-
   }
+
+  ngOnInit() {
+    this.titleService.setTitle(this.title);
+  }
+
 
 }
 
