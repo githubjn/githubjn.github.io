@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserModule, Title, Meta } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -70,7 +70,8 @@ export function HttpLoaderFactory(http: HttpClient){
       multi: true 
     },
     HttpClient,
-    Title
+    Title,
+    Meta
   ],
   bootstrap: [AppComponent]
 })
