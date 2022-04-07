@@ -25,8 +25,13 @@ export class CoursesComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleService.setTitle( this.title );
-    this.addTags();
+    //this.addTags();
     this.courses = this.service.getCourses();
+    //console.log("tags = ", this.addTags());
+    this.metaService.addTag({name: 'keywords', content: 'Angular Project, Create Angular Project'});
+    this.metaService.addTag({name: 'description', content: 'Angular app training angapp'});
+    this.metaService.addTag({name: 'author', content: 'jmc'});
+    this.metaService.addTag({name: 'robots', content: 'index, follow'});
   }
 
   SendAddToCartEvent(){ 
