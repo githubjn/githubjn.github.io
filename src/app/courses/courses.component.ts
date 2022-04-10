@@ -42,9 +42,10 @@ export class CoursesComponent implements OnInit {
 
   addTags() {
     this.metaService.addTags([
-      { name: 'description', content: 'Article Description' },
+      { name: 'description', content: "Give each page a unique meta description that clearly reflects what value the page carries." },
       { name: 'robots', content: 'index,follow' },
       { name: "viewport", content: "width=device-width, initial-scale=2" },
+      { name: 'date', content: '2022-04-06', scheme: 'YYYY-MM-DD' },
       { property: 'og:title', content: 'Content Title for social media' }
    ]);
  }
