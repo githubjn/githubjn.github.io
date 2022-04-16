@@ -5,6 +5,8 @@
 /tmp
 /out-tsc
 /bazel-out
+docker-compose.yml
+Dockerfile
 
 # Node
 /node_modules

@@ -1,4 +1,5 @@
-FROM node:lts
+# FROM node:lts
+FROM node:16.14.2
 
 # Install global npm packages
 RUN npm i -g @angular/cli

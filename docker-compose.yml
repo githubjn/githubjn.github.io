@@ -1,10 +1,10 @@
 version: "3"
 services:
   dev:
-    container_name: devjn
+    container_name: angapp
     build: .
     ports:
-      - "4200:4200"
+      - "4200:4200" 
     environment:
       SHELL: /bin/bash
       NODE_ENV: development
