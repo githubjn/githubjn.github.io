@@ -24,7 +24,8 @@ import { PdpComponent } from './pdp/pdp.component';
 import { PlpComponent } from './plp/plp.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { FaqComponent } from './faq/faq.component';
-import { ContactComponent } from './contact/contact.component'; 
+import { ContactComponent } from './contact/contact.component';
+import { FormContactComponent } from './form-contact/form-contact.component'; 
 
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http);
@@ -47,7 +48,8 @@ export function HttpLoaderFactory(http: HttpClient){
     PlpComponent,
     PricingComponent,
     FaqComponent,
-    ContactComponent
+    ContactComponent,
+    FormContactComponent
   ],
   imports: [
     BrowserModule,

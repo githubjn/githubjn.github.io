@@ -1,0 +1,12 @@
+<form>
+    <div class="form-group">
+        <label for="firstNamejmc">First Name</label>
+        <input required ngModel name="firstNamejmc" type="text" class="form-control">    
+        <div class="alert alert-danger" *ngIf="!firstNamejmc.valid">First name is required</div>
+    </div>
+    <div class="form-group">
+        <label for="comment">Comment</label>
+        <textarea ngModel name="comment" id="comment" cols="30" rows="10" class="form-control"></textarea>
+    </div>
+    <button class="btn btn-primary">Submit</button>
+</form>

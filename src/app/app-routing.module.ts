@@ -14,6 +14,7 @@ import { PlpComponent } from './plp/plp.component';
 import { PricingComponent } from './pricing/pricing.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContactComponent } from './contact/contact.component';
+import { FormContactComponent } from './form-contact/form-contact.component';
 
 const routes: Routes = [
   { path: '', component: TempoComponent },
@@ -31,6 +32,7 @@ const routes: Routes = [
   { path: 'country', component: CountryComponent },
   { path: 'countries', component: CountriesComponent },
   { path: 'removedPage',   redirectTo: '/books', pathMatch: 'full' }, // redirect to `first-component`
+  { path: 'form-contact', component: FormContactComponent },
   { path: '**', component: NotFoundComponent },  // Wildcard route for a 404 page
 ];
 
